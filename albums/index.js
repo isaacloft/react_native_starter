@@ -8,16 +8,16 @@
 
 /** @format */
 
-import React from "react";
-import { AppRegistry, View } from "react-native";
-import Header from "./src/components/header.js";
-import AlbumList from "./src/components/AlbumList.js";
+import React from 'react';
+import { AppRegistry, View } from 'react-native';
+import Header from './src/components/header.js';
+import AlbumList from './src/components/AlbumList.js';
 
 const App = () => (
-	<View>
-		<Header headerText={"Albums"} />
+	<View style={{ flex: 1 }}>
+		<Header headerText={'Albums'} />
 		<AlbumList />
 	</View>
 );
 
-AppRegistry.registerComponent("albums", () => App);
+AppRegistry.registerComponent('albums', () => App);

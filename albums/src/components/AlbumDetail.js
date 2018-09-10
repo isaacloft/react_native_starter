@@ -4,21 +4,30 @@ import Card from './Card.js';
 import CardSection from './CardSection.js';
 
 const AlbumDetail = ({ album }) => {
-	const { title, artist, thumbnail_image } = album;
+	const { title, artist, thumbnail_image, image } = album;
+	const {
+		cardTextSection,
+		cardThumbNail,
+		imageStyle,
+		headerTextStyle
+	} = styles;
 
 	return (
 		<Card>
 			<CardSection>
 				<View>
 					<Image
-						style={styles.cardThumbNail}
+						style={cardThumbNail}
 						source={{ uri: thumbnail_image }}
 					/>
 				</View>
-				<View style={styles.cardTextSection}>
-					<Text>{title}</Text>
+				<View style={cardTextSection}>
+					<Text style={headerTextStyle}>{title}</Text>
 					<Text>{artist}</Text>
 				</View>
+			</CardSection>
+			<CardSection>
+				<Image style={imageStyle} source={{ uri: image }} />
 			</CardSection>
 		</Card>
 	);
@@ -33,6 +42,15 @@ const styles = {
 	cardThumbNail: {
 		width: 50,
 		height: 50
+	},
+	imageStyle: {
+		height: 300,
+		flex: 1,
+		width: null
+	},
+	headerTextStyle: {
+		fontSize: 18,
+		fontWeight: '600'
 	}
 };
 
