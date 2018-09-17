@@ -1,13 +1,26 @@
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import Header from './common/Header.js';
+import firebase from 'firebase';
 
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import { Header } from './common/';
+import LoginForm from './LoginForm';
 class App extends Component {
+	componentWillMount() {
+		firebase.initializeApp({
+			apiKey: 'AIzaSyBBw6nEW_c8tneTqci7dUlCRrzrKcDOBkk',
+			authDomain: 'auth-c0130.firebaseapp.com',
+			databaseURL: 'https://auth-c0130.firebaseio.com',
+			projectId: 'auth-c0130',
+			storageBucket: 'auth-c0130.appspot.com',
+			messagingSenderId: '232089854608'
+		});
+	}
 	render() {
 		return (
 			<View>
 				<Header />
-				<Text> App home </Text>
+
+				<LoginForm />
 			</View>
 		);
 	}
