@@ -1,9 +1,10 @@
 import firebase from 'firebase';
+import LoginForm from './LoginForm';
 
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Header } from './common/';
-import LoginForm from './LoginForm';
+
 class App extends Component {
 	componentWillMount() {
 		firebase.initializeApp({
